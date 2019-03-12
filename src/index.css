@@ -58,7 +58,6 @@ li{
 .video-player{
   flex:1;
   background-color: #080E0E;
-  height:100vh;
   align-items: center;
   display:flex;
   flex-direction: column;
