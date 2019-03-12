@@ -19,6 +19,11 @@ li{
 
 .video-controller{
   background-color: #0F1B1C;
+  width: 240px;
+  transition: margin 0.4s;
+}
+.video-controller.close{
+  margin-left: -240px;
 }
 
 .video-list{

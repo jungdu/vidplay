@@ -6,20 +6,12 @@ import { connect } from "react-redux";
 const VidController = props => {
   const { isListOpen } = props;
 
-  const render = () => {
-    if (isListOpen) {
-      return (
-        <div className="video-controller">
-          <ControllerHead />
-          <VidList />
-        </div>
-      );
-    } else {
-      return null;
-    }
-  };
-
-  return render();
+  return (
+    <div className={`video-controller ${isListOpen ? "" : "close"}`}>
+      <ControllerHead />
+      <VidList />
+    </div>
+  );
 };
 
 const mapStateToProps = state => {
