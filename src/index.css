@@ -43,6 +43,10 @@ li{
   user-select: none;
 }
 
+.video-list li.playing{
+  color: tomato;
+}
+
 .player-header{
   width: 100%;
   height: 78px;

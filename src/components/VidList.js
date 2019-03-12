@@ -3,6 +3,8 @@ import { fetchVids, selectVid } from "../actions";
 import { connect } from "react-redux";
 
 const VidList = props => {
+  const { vidList, playing } = props;
+
   useEffect(() => {
     props.fetchVids();
   }, []);
@@ -12,13 +14,18 @@ const VidList = props => {
   };
 
   const renderList = () => {
-    const { vidList } = props;
     if (vidList && vidList.length > 0) {
-      return vidList.map((elem, i) => (
-        <li key={i} onClick={() => onClickItem(elem)}>
-          {elem}
-        </li>
-      ));
+      return vidList.map((elem, i) => {
+        return (
+          <li
+            key={i}
+            onClick={() => onClickItem(elem)}
+            className={playing === elem ? "playing" : ""}
+          >
+            {elem}
+          </li>
+        );
+      });
     } else {
       return <li>There is no video</li>;
     }
@@ -29,7 +36,8 @@ const VidList = props => {
 
 const mapStateToProps = state => {
   return {
-    vidList: state.vid.vidList
+    vidList: state.vid.vidList,
+    playing: state.vid.playing
   };
 };
 
