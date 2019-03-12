@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { connect } from "react-redux";
+import { serverUrl } from "../../config";
 
 const MainPlayer = props => {
   const videoTag = useRef();
@@ -8,7 +9,7 @@ const MainPlayer = props => {
 
   const changeSource = () => {
     if (playing) {
-      sourceTag.current.src = `http://localhost:4000/stream/video?filename=${playing}`;
+      sourceTag.current.src = `${serverUrl}/stream/video?filename=${playing}`;
       videoTag.current.load();
     }
   };
@@ -21,7 +22,7 @@ const MainPlayer = props => {
     <video id="main-player" controls muted="muted" autoPlay ref={videoTag}>
       <source
         ref={sourceTag}
-        src={`http://localhost:4000/stream/video?filename=Amalfi.mp4`}
+        src={`${serverUrl}/stream/video?filename=Amalfi.mp4`}
         type="video/mp4"
       />
     </video>
