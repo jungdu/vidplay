@@ -24,6 +24,8 @@ li{
 .video-list{
   padding: 20px;
   color: #d1d1d1;
+  max-height: 550px;
+  overflow-y: auto;
 }
 
 .video-list li{
@@ -66,6 +68,7 @@ li{
 #main-player{
   width: 100%;
   max-width: 1024px;
+  margin-bottom: 20px;
 }
 
 #list-openclose-icon{
