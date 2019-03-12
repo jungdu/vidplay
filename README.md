@@ -8,5 +8,5 @@
 * 리엑트, 리덕스
 * Nodejs
 
-<br>
-예제에서 사용된 [비디오 파일 출처 : coverr](https://coverr.co/)
+
+### 예제에서 사용된 비디오 파일 출처 : https://coverr.co/
