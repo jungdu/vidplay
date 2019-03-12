@@ -12,10 +12,10 @@ router.get("/video", function(req, res) {
   const filePath = path.join(__dirname, "..", "..", "video", filename);
   const stat = fs.statSync(filePath);
   const fileSize = stat.size;
-
+  const offset = 10000000;
   const parts = range.replace(/bytes=/, "").split("-");
   const start = parseInt(parts[0], 10);
-  const partend = start + 1000000 < fileSize ? start + 1000000 : fileSize - 1;
+  const partend = start + offset < fileSize ? start + offset : fileSize - 1;
 
   const end = partend;
   const chunksize = end - start + 1;
