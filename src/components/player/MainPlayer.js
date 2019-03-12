@@ -21,7 +21,7 @@ const MainPlayer = props => {
     <video id="main-player" controls muted="muted" autoPlay ref={videoTag}>
       <source
         ref={sourceTag}
-        src={`http://localhost:4000/stream/video?filename=remotube.mp4`}
+        src={`http://localhost:4000/stream/video?filename=Amalfi.mp4`}
         type="video/mp4"
       />
     </video>
