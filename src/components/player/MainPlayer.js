@@ -20,11 +20,7 @@ const MainPlayer = props => {
 
   return (
     <video id="main-player" controls muted="muted" autoPlay ref={videoTag}>
-      <source
-        ref={sourceTag}
-        src={`${serverUrl}/stream/video?filename=Amalfi.mp4`}
-        type="video/mp4"
-      />
+      <source ref={sourceTag} type="video/mp4" />
     </video>
   );
 };
