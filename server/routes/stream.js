@@ -26,7 +26,8 @@ router.get("/video", function(req, res) {
     "Content-Length": chunksize,
     "Content-Type": "video/mp4"
   };
-  console.log("Content-Range : ", `bytes ${start}-${end}/${fileSize}`);
+  // 데이터 전송 확인 로그
+  // console.log("Content-Range : ", `bytes ${start}-${end}/${fileSize}`);
   const file = fs.createReadStream(filePath, { start, end });
   res.writeHead(206, head);
   file.pipe(res);

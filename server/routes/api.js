@@ -10,7 +10,6 @@ router.get("/videos", (req, res) => {
     if (err) {
       res.status(400).send("Error : " + err);
     } else {
-      console.log(items);
       items = items.filter(filename => fileRgx.exec(filename));
       res.send(JSON.stringify({ files: items }));
     }
