@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { fetchVids, selectVid } from "../actions";
+import { fetchVids, selectVid } from "../../actions";
 import { connect } from "react-redux";
 
 const VidList = props => {

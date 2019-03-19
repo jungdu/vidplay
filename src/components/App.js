@@ -1,5 +1,5 @@
 import React from "react";
-import VidController from "./VidController";
+import VidController from "./controller/VidController";
 import PlayerContainer from "./player/PlayerContainer";
 
 const App = () => {

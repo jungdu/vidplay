@@ -1,22 +1,39 @@
 import { FETCH_VIDS, SELECT_VID } from "../actions/types";
+import { bucketUrl } from "../config";
 
 const initialState = {
   vidList: [],
-  playing: null
+  playing: null,
+  selectedFile: null
+};
+
+const fetchVids = (state, action) => {
+  return {
+    ...state,
+    vidList: [...action.payload]
+  };
+};
+
+const getSource = video => {
+  return video ? bucketUrl + video : null;
+};
+
+const selectVid = (state, action) => {
+  const selectedFile = action.payload ? action.payload : null;
+  const playing = getSource(selectedFile);
+  return {
+    ...state,
+    selectedFile,
+    playing
+  };
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case FETCH_VIDS:
-      return {
-        ...state,
-        vidList: [...action.payload.files]
-      };
+      return fetchVids(state, action);
     case SELECT_VID:
-      return {
-        ...state,
-        playing: action.payload
-      };
+      return selectVid(state, action);
     default:
       return state;
   }

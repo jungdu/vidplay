@@ -9,12 +9,13 @@ const MainPlayer = props => {
 
   const changeSource = () => {
     if (playing) {
-      sourceTag.current.src = `${serverUrl}/stream/video?filename=${playing}`;
+      sourceTag.current.src = playing;
       videoTag.current.load();
     }
   };
 
   useEffect(() => {
+    console.log(" ddsfsd");
     changeSource();
   }, [playing]);
 
