@@ -2,6 +2,7 @@ import React from "react";
 import VidList from "./VidList";
 import ControllerHead from "./ControllerHead";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 const VidController = props => {
   const { isListOpen } = props;
@@ -12,6 +13,10 @@ const VidController = props => {
       <VidList />
     </div>
   );
+};
+
+VidController.propTypes = {
+  isListOpen: PropTypes.bool
 };
 
 const mapStateToProps = state => {
