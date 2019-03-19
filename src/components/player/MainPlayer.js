@@ -15,7 +15,6 @@ const MainPlayer = props => {
   };
 
   useEffect(() => {
-    console.log(" ddsfsd");
     changeSource();
   }, [playing]);
 
