@@ -15,15 +15,15 @@ const fetchVids = (state, action) => {
 };
 
 const getSource = video => {
-  return bucketUrl + video;
+  return video ? bucketUrl + video : null;
 };
 
 const selectVid = (state, action) => {
-  const selectedFile = action.payload;
+  const selectedFile = action.payload ? action.payload : null;
   const playing = getSource(selectedFile);
   return {
     ...state,
-    selectedfile,
+    selectedFile,
     playing
   };
 };
