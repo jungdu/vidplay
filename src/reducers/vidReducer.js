@@ -19,11 +19,11 @@ const getSource = video => {
 };
 
 const selectVid = (state, action) => {
-  console.log(action);
-  const playing = getSource(action.payload);
+  const selectedFile = action.payload;
+  const playing = getSource(selectedFile);
   return {
     ...state,
-    selectedfile: action.payload,
+    selectedfile,
     playing
   };
 };
