@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { fetchVids, selectVid } from "../../actions";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 const VidList = props => {
-  const { vidList, playing, selectedFile } = props;
+  const { vidList, selectedFile } = props;
 
   useEffect(() => {
     props.fetchVids();
@@ -32,6 +33,11 @@ const VidList = props => {
   };
 
   return <ul className="video-list">{renderList()}</ul>;
+};
+
+VidList.propTypes = {
+  vidList: PropTypes.array,
+  selectedFile: PropTypes.string
 };
 
 const mapStateToProps = state => {
