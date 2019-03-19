@@ -3,7 +3,7 @@ import { fetchVids, selectVid } from "../../actions";
 import { connect } from "react-redux";
 
 const VidList = props => {
-  const { vidList, playing } = props;
+  const { vidList, playing, selectedFile } = props;
 
   useEffect(() => {
     props.fetchVids();
@@ -20,7 +20,7 @@ const VidList = props => {
           <li
             key={i}
             onClick={() => onClickItem(elem)}
-            className={playing === elem ? "playing" : ""}
+            className={selectedFile === elem ? "playing" : ""}
           >
             {elem}
           </li>
@@ -37,7 +37,8 @@ const VidList = props => {
 const mapStateToProps = state => {
   return {
     vidList: state.vid.vidList,
-    playing: state.vid.playing
+    playing: state.vid.playing,
+    selectedFile: state.vid.selectedFile
   };
 };
 
