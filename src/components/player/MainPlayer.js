@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from "react";
 import { connect } from "react-redux";
-import { serverUrl } from "../../config";
 
 const MainPlayer = props => {
   const videoTag = useRef();
