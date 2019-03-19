@@ -38,3 +38,10 @@ export const bucketUrl = "<S3 버킷의 URL 경로>";
 ```
 
 ### 예제에서 사용된 비디오 파일 출처 : https://coverr.co/
+
+## 개선할 사항
+
+- AWS CloudFront 를 사용하여 트레픽 줄이기
+- 파일명 Hash 처리
+- Thumbnail 자동 생성 기능
+- 동영상 접근 인증 강화
