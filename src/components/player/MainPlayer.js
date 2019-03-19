@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 const MainPlayer = props => {
   const videoTag = useRef();
@@ -22,6 +23,10 @@ const MainPlayer = props => {
       <source ref={sourceTag} type="video/mp4" />
     </video>
   );
+};
+
+MainPlayer.propTypes = {
+  playing: PropTypes.string
 };
 
 const mapStateToProps = state => {
