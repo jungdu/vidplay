@@ -27,7 +27,7 @@ const VidList = props => {
         );
       });
     } else {
-      return <li>There is no video</li>;
+      return <li> Loading... </li>;
     }
   };
 
