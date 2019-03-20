@@ -36,19 +36,19 @@ const VidList = props => {
 };
 
 VidList.propTypes = {
-  vidList: PropTypes.array,
-  selectedFile: PropTypes.string
+  vidList: PropTypes.arrayOf(PropTypes.string),
+  selectedFile: PropTypes.string,
 };
 
 const mapStateToProps = state => {
   return {
     vidList: state.vid.vidList,
     playing: state.vid.playing,
-    selectedFile: state.vid.selectedFile
+    selectedFile: state.vid.selectedFile,
   };
 };
 
 export default connect(
   mapStateToProps,
-  { fetchVids, selectVid }
+  { fetchVids, selectVid },
 )(VidList);
