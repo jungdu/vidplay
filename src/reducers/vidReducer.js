@@ -1,20 +1,20 @@
 import { FETCH_VIDS, SELECT_VID } from "../actions/types";
 import { bucketUrl } from "../config";
 
-const initialState = {
+export const initialState = {
   vidList: [],
   playing: null,
-  selectedFile: null
+  selectedFile: null,
 };
 
 const fetchVids = (state, action) => {
   return {
     ...state,
-    vidList: [...action.payload]
+    vidList: [...action.payload],
   };
 };
 
-const getSource = video => {
+export const getSource = video => {
   return video ? bucketUrl + video : null;
 };
 
@@ -24,7 +24,7 @@ const selectVid = (state, action) => {
   return {
     ...state,
     selectedFile,
-    playing
+    playing,
   };
 };
 
