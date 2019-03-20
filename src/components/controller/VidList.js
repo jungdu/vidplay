@@ -38,6 +38,7 @@ const VidList = props => {
 VidList.propTypes = {
   vidList: PropTypes.arrayOf(PropTypes.string),
   selectedFile: PropTypes.string,
+  playing: PropTypes.string,
 };
 
 const mapStateToProps = state => {
