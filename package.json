@@ -16,7 +16,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "export NODE_ENV=prod || SET NOTE_ENV=prod && npm run build && npm run server",
+    "start": "export NODE_ENV=prod || SET NOTE_ENV=prod && npm run react",
     "dev": "npm run react",
     "server": "nodemon server/server.js",
     "react": "react-scripts start",
