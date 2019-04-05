@@ -15,7 +15,7 @@ const fetchVids = (state, action) => {
 };
 
 export const getSource = video => {
-  return video ? bucketUrl +'video/'+ video : null;
+  return video ? bucketUrl + "videos/" + video : null;
 };
 
 const selectVid = (state, action) => {
