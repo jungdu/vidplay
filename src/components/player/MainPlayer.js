@@ -11,7 +11,8 @@ const MainPlayer = props => {
   const changeSource = () => {
     if (playing) {
       sourceTag.current.src = playing;
-      // subtitleTag.current.src = "";
+      sourceTag.current.type = `video/${/\.([^\.]*)$/.exec(playing)[1]}`;
+      subtitleTag.current.src = playing.replace(/(mp4|mkv)$/, "vtt");
       videoTag.current.load();
     }
   };
